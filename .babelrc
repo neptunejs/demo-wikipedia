@@ -1,0 +1,12 @@
+{
+  "presets": [
+    ["env", {"targets": {"browsers":
+      [
+        "chrome >= 54",
+        "last 2 firefox versions",
+        "last 2 edge versions"
+      ]
+    }}],
+    "react"
+  ]
+}
