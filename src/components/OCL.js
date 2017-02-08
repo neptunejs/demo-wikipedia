@@ -12,14 +12,8 @@ function OCL({changeQuery}) {
     );
 }
 
-// function mapStateToProps(state) {
-//     return {
-//         data: state.data
-//     };
-// }
-
 const mapDispatchToProps = {
     changeQuery
 };
 
-export default connect(null/*mapStateToProps*/, mapDispatchToProps)(OCL);
+export default connect(null, mapDispatchToProps)(OCL);
