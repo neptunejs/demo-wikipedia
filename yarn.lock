@@ -912,6 +912,10 @@ cipher-base@^1.0.0, cipher-base@^1.0.1:
   dependencies:
     inherits "^2.0.1"
 
+classnames@^2.2.5:
+  version "2.2.5"
+  resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.5.tgz#fb3801d453467649ef3603c7d61a02bd129bde6d"
+
 cliui@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/cliui/-/cliui-2.1.0.tgz#4b475760ff80264c762c3a1719032e91c7fea0d1"
@@ -2154,7 +2158,7 @@ openchemlib-extended@^2.1.0:
     sdf-parser "^1.0.0"
     setimmediate "^1.0.2"
 
-openchemlib@^5.0.0, openchemlib@^5.1.1:
+openchemlib@^5.1.1:
   version "5.1.1"
   resolved "https://registry.yarnpkg.com/openchemlib/-/openchemlib-5.1.1.tgz#e7ae9ad2859c93020229a2519098af3c3e239193"
 
@@ -2405,12 +2409,11 @@ react-modal@^1.6.5:
     exenv "1.2.0"
     lodash.assign "^4.2.0"
 
-react-ocl@^0.0.5:
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/react-ocl/-/react-ocl-0.0.5.tgz#b2835e5cdfa4f13107e8524ba658e83ce27a8e2d"
+react-ocl@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/react-ocl/-/react-ocl-0.1.0.tgz#16eb2c0a4aa96d1eb05933c83026aec660900e4e"
   dependencies:
     lodash.uniqueid "^4.0.1"
-    openchemlib "^5.0.0"
 
 react-redux@^5.0.2:
   version "5.0.2"
@@ -2421,6 +2424,12 @@ react-redux@^5.0.2:
     lodash "^4.2.0"
     lodash-es "^4.2.0"
     loose-envify "^1.1.0"
+
+react-table@^5.0.2:
+  version "5.0.2"
+  resolved "https://registry.yarnpkg.com/react-table/-/react-table-5.0.2.tgz#889b73a170a57978e40a8cdbd1d89955b8859fd0"
+  dependencies:
+    classnames "^2.2.5"
 
 react@^15.4.2:
   version "15.4.2"
