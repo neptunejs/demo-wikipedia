@@ -1,6 +1,6 @@
-export default function(state = [], action) {
+export default function(state = null, action) {
     switch (action.type) {
-        case 'FETCH_DATA_FULFILLED':
+        case 'CHANGE_QUERY':
             return action.payload;
         default:
             return state;

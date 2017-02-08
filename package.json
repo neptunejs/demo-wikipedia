@@ -28,10 +28,16 @@
     "webpack-dev-server": "^2.3.0"
   },
   "dependencies": {
+    "openchemlib": "^5.1.1",
+    "openchemlib-extended": "^2.1.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
+    "react-modal": "^1.6.5",
+    "react-ocl": "^0.0.5",
     "react-redux": "^5.0.2",
     "redux": "^3.6.0",
-    "redux-promise": "^0.5.3"
+    "redux-promise-middleware": "^4.2.0",
+    "redux-thunk": "^2.2.0",
+    "reselect": "^2.5.4"
   }
 }
