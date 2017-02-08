@@ -2,7 +2,6 @@ import React from 'react';
 import {connect} from 'react-redux';
 import ReactModal from 'react-modal';
 
-
 function Modal({loading}) {
     const isOpen = loading !== null;
     let content;
@@ -14,7 +13,11 @@ function Modal({loading}) {
         }
     }
     return (
-        <ReactModal isOpen={isOpen} style={{content:{textAlign: 'center', fontSize: '24pt'}}}>
+        <ReactModal
+            isOpen={isOpen}
+            style={{content:{textAlign: 'center', fontSize: '24pt'}}}
+            contentLabel="loading"
+        >
             {content}
         </ReactModal>
     );

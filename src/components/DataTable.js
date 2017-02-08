@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { clickMol } from '../actions/index';
+import {getFilteredData} from '../selectors/searchMol';
 
 function DataTable({data, clickMol}) {
     return (
@@ -22,7 +23,7 @@ function getTableElement(clickMol) {
 
 function mapStateToProps(state) {
     return {
-        data: state.data
+        data: getFilteredData(state)
     };
 }
 

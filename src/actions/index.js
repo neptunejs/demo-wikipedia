@@ -30,9 +30,9 @@ export function fetchData() {
                     //oclMol.ensureHelperArrays(3);
                     oclMol.index = molecule.act_idx;
                     oclMol.idcode = molecule.actID.value;
-                    db.push(oclMol);
+                    db.push(oclMol, molecule);
                 }
-                return molecules;
+                return db;
             })
         });
     };
