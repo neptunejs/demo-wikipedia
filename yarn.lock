@@ -2401,6 +2401,10 @@ react-dom@^15.4.2:
     loose-envify "^1.1.0"
     object-assign "^4.1.0"
 
+react-list@^0.8.3:
+  version "0.8.3"
+  resolved "https://registry.yarnpkg.com/react-list/-/react-list-0.8.3.tgz#ac1d47de68fd2ad38005890982666a984e174fe4"
+
 react-modal@^1.6.5:
   version "1.6.5"
   resolved "https://registry.yarnpkg.com/react-modal/-/react-modal-1.6.5.tgz#f720d99bd81b1def5c2c32e0ffaa48bdaf484862"

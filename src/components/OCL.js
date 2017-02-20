@@ -8,7 +8,7 @@ import { changeQuery } from '../actions/index';
 
 function OCL({changeQuery}) {
     return (
-        <StructureEditor OCL={OCLLib} onChange={changeQuery} width="100%" />
+        <StructureEditor OCL={OCLLib} onChange={changeQuery} height={400} width="100%" />
     );
 }
 

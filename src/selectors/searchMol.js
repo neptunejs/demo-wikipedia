@@ -9,6 +9,9 @@ export const getFilteredData = createSelector(
     (data, query, searchMode) => {
         if (data.length === 0) return [];
         if (query === null) return data.data;
-        return data.search(query, {mode: searchMode}).data;
+        console.time('search');
+        const result = data.search(query, {mode: searchMode}).data;
+        console.timeEnd('search');
+        return result;
     }
 );
