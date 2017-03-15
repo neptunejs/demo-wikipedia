@@ -3,7 +3,6 @@
 const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const BabiliPlugin = require('babili-webpack-plugin');
 
 const VENDOR_LIBS = [
     'openchemlib-extended/lib/extend',
@@ -23,13 +22,7 @@ const OCL_LIB = [
     'openchemlib/full'
 ];
 
-const notOCL = {
-    test(filename) {
-        return filename.endsWith('.js') && !filename.startsWith('ocl');
-    }
-};
-
-module.exports = {
+const webpackConfig = {
     entry: {
         bundle: './src/index.js',
         vendor: VENDOR_LIBS,
@@ -58,9 +51,20 @@ module.exports = {
         }),
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
-        }),
-        new BabiliPlugin({}, {
-            test: notOCL
         })
     ]
 };
+
+if (process.env.NODE_ENV === 'production') {
+    const BabiliPlugin = require('babili-webpack-plugin');
+    const notOCL = {
+        test(filename) {
+            return filename.endsWith('.js') && !filename.startsWith('ocl');
+        }
+    };
+    webpackConfig.plugins.push(new BabiliPlugin({}, {
+        test: notOCL
+    }));
+}
+
+module.exports = webpackConfig;
