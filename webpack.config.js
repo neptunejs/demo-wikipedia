@@ -3,9 +3,9 @@
 const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const BabiliPlugin = require('babili-webpack-plugin');
 
 const VENDOR_LIBS = [
-    'openchemlib/full',
     'openchemlib-extended/lib/extend',
     'react',
     'react-dom',
@@ -16,13 +16,24 @@ const VENDOR_LIBS = [
     'redux',
     'redux-promise-middleware',
     'redux-thunk',
-    'reselect'
+    'reselect',
 ];
+
+const OCL_LIB = [
+    'openchemlib/full'
+];
+
+const notOCL = {
+    test(filename) {
+        return filename.endsWith('.js') && !filename.startsWith('ocl');
+    }
+};
 
 module.exports = {
     entry: {
         bundle: './src/index.js',
-        vendor: VENDOR_LIBS
+        vendor: VENDOR_LIBS,
+        ocl: OCL_LIB
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -40,13 +51,16 @@ module.exports = {
     // devtool: 'source-map',
     plugins: [
         new webpack.optimize.CommonsChunkPlugin({
-            names: ['vendor', 'manifest']
+            names: ['vendor', 'ocl', 'manifest']
         }),
         new HtmlWebpackPlugin({
             template: 'src/index.html'
         }),
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+        }),
+        new BabiliPlugin({}, {
+            test: notOCL
         })
     ]
 };
